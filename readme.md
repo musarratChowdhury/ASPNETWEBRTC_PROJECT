@@ -13,9 +13,13 @@
 
 # User Interface
 
-        The user simply clicks on "Create new meeting" to immidiately enter a new meeting room with an unique id, He can share this link to his friends, so that they can join the same room, in the meeting.
+        The user simply clicks on "Create new meeting" to
+
+        immidiately enter a new meeting room with an unique id, He can share this
+
+        link to his friends, so that they can join the same room, in the meeting.
 
 # Features
 
-        1.  Users can simply copy and paste the url to join a room/meeting
-        2.  Whenever a user disconnects, he is automatically removed from the meeting
+        - Users can simply copy and paste the url to join a room/meeting
+        - Whenever a user disconnects, he is automatically removed from the meeting
