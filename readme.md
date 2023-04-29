@@ -21,5 +21,5 @@
 
 # Features
 
-        - Users can simply copy and paste the url to join a room/meeting
-        - Whenever a user disconnects, he is automatically removed from the meeting
+- Users can simply copy and paste the url to join a room/meeting
+- Whenever a user disconnects, he is automatically removed from the meeting
