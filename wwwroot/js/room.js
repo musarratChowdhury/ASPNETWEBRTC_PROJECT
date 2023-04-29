@@ -26,14 +26,7 @@ myPeer.on("open", (id) => {
 });
 //#endregion
 //#region PEER EVENT CALL
-// myPeer.on("call", (call) => {
-//   call.answer(localStream);
 
-//   const userVideo = document.createElement("video");
-//   call.on("stream", (userVideoStream) => {
-//     addVideoStream(userVideo, userVideoStream);
-//   });
-// });
 myPeer.on("call", (call) => {
   console.log(call.provider.id);
   navigator.mediaDevices
