@@ -7,6 +7,10 @@ const connection = new signalR.HubConnectionBuilder()
   .withUrl("/meeting")
   .build();
 const videoGrid = document.querySelector("#video-grid");
+const shareLinkDiv = document.querySelector("#share-link");
+const copyButton = document.getElementById("copyButton");
+const copyTarget = document.getElementById("copyTarget");
+const currentURL = location.href;
 const myVideo = document.createElement("video");
 myVideo.muted;
 
@@ -96,4 +100,22 @@ function connectToNewUser(userId, localStream) {
 
   peers[userId] = call;
 }
+//#endregion
+
+//#region Share Link
+console.log(currentURL);
+copyTarget.innerText = currentURL;
+
+copyButton.addEventListener("click", function (event) {
+  const textToCopy = copyTarget.innerText;
+  navigator.clipboard
+    .writeText(textToCopy)
+    .then(function () {
+      console.log("Text copied to clipboard");
+    })
+    .catch(function (error) {
+      console.error("Error copying text: ", error);
+    });
+});
+
 //#endregion

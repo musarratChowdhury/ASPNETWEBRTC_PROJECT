@@ -1,5 +1,11 @@
-﻿<h1 id="roomidtext" class="text-center">@ViewBag.roomId</h1>
+﻿<h1 id="roomidtext" class="text-center"> Room ID : @ViewBag.roomId</h1>
 <div id="video-grid"></div>
+<div class="linkShare">
+    <div id="share-link">Share this link to invite friends : <span id="copyTarget"></span></div>
+    <button id="copyButton" data-clipboard-target="#copyTarget">Copy</button>
+</div>
+
+
 
 <script src="~/js/dist/browser/signalr.min.js"></script>
 <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>

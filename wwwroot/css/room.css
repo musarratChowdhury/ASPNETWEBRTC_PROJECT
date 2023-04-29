@@ -1,0 +1,12 @@
+#copyTarget {
+  text-decoration: dotted;
+  color: blue;
+  padding: 0.2rem 0.3rem;
+  border: 0.4px solid;
+}
+#share-link {
+  padding: 0.5rem 1rem;
+}
+.linkShare {
+  display: flex;
+}
