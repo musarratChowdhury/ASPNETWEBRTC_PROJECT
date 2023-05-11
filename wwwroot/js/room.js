@@ -5,7 +5,15 @@ const peers = {};
 
 const connection = new signalR.HubConnectionBuilder()
   .withUrl("/meeting")
-  .build();
+    .build();
+
+//for chat app
+let chatMsg = document.getElementById('messageInput');
+let sendBtn = document.getElementById('sendButton');
+
+let user = document.getElementById("userInput");
+
+
 const videoGrid = document.querySelector("#video-grid");
 const shareLinkDiv = document.querySelector("#share-link");
 const copyButton = document.getElementById("copyButton");
@@ -22,10 +30,25 @@ myPeer.on("open", (id) => {
     await connection.start();
     await connection.invoke("JoinRoom", ROOM_ID, userId);
   };
-  startSignalR();
+    startSignalR();
+
+   
 });
 //#endregion
 //#region PEER EVENT CALL
+
+sendBtn.addEventListener("click", () => {
+    console.log(chatMsg.value, user.value);
+     connection.invoke("SendMessage", ROOM_ID, user.value, chatMsg.value);
+})
+
+//for showing others msg
+
+connection.on("ReceiveMessage", function (user, message) {
+    var li = document.createElement("li");
+    document.getElementById("messagesList").appendChild(li);
+    li.textContent = `${user} says ${message}`;
+});
 
 myPeer.on("call", (call) => {
   console.log(call.provider.id);
@@ -112,3 +135,4 @@ copyButton.addEventListener("click", function (event) {
 });
 
 //#endregion
+
