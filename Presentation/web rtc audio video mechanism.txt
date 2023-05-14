@@ -1,0 +1,22 @@
+The main task of the audio mechanism is to handle
+echo cancellation and noise reduction. Echo cancellation
+is a method that improves the sound quality, removing the
+resulting echo or preventing its occurrence. Noise
+reduction is the process of removing noise from the signal.
+The audio mechanism contains iSAC and iLBC codecs.
+iSAC codec represents a wideband audio codec developed
+by Global IP Solutions. This codec is suitable for audio
+streams and in June 2011 became a part of the WebRTC
+technology. Global IP Solutions is also the creator of the
+iLBC codec. This narrowband audio codec is suitable for
+voice communication over IP.
+
+
+The video mechanism is responsible for image
+enhancement and video jitter buffer. Image enhancement
+is the process of improving the quality of digital image by
+manipulation with a certain software. The video
+mechanism includes VP8 codec. VP8 codec is a video
+compression format. It was developed by On2
+Technologies in September 2008 and is currently
+supported by Chrome, Mozilla and Opera.
