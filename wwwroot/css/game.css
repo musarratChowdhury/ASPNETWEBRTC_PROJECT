@@ -1,152 +1,187 @@
 ﻿*,
 *::after,
 *::before {
-    /* border: 1px solid; */
+  /* border: 1px solid;  */
 }
+@font-face {
+  font-family: SunnySpells;
+  src: url("../assets/Font/SunnySpells.ttf");
+}
+
+@font-face {
+  font-family: FredokaOne;
+  src: url("../assets/Font/FredokaOne-Regular.ttf");
+}
+@font-face {
+  font-family: ScoreBoard;
+  src: url("../assets/Font/scoreboard.ttf");
+}
+@font-face {
+  font-family: LedBoard;
+  src: url("../assets/Font/LedBoard.TTF");
+}
+@font-face {
+  font-family: LedBoardR;
+  src: url("../assets/Font/LEDBDREV.TTF");
+}
+@font-face {
+  font-family: LCD2N;
+  src: url("../assets/Font/LCD2N___.TTF");
+}
+@font-face {
+  font-family: LCDN;
+  src: url("../assets/Font/LCD-N___.TTF");
+}
+
 /*css variables */
 :root {
-    --notification-font: monospace;
-    --scoreboard-font: monospace;
-    --this-over-font: monospace;
+  --notification-font: SunnySpells;
+  --scoreboard-font: LCDN;
+  --this-over-font: LedBoardR;
 }
 
 /* body */
 body {
-    height: 100vh;
+  height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 /* body */
 
 /* main game section */
 .main-game-section {
-    height: 700px;
-    width: 400px;
-    background-color: tomato;
+  background-image: url(../assets/images/backgrounds/background2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  margin: 0 auto;
+  height: 700px;
+  width: 378px;
 
-    display: grid;
-    grid-template-rows: 1.5fr 0.5fr 5fr 0.5fr 2fr;
-    border-radius: 1rem;
+  display: grid;
+  grid-template-rows: 1.5fr 0.5fr 5fr 0.5fr 2fr;
+  border-radius: 1rem;
 }
 /* main game section */
 
 .score-board {
-    background-color: rgb(107, 107, 192);
+  background-color: rgb(14, 14, 94);
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 
-    border-radius: 1rem 0rem;
+  border-radius: 1rem 0rem;
 }
 .score-board div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    font-size: 1.3rem;
-    font-family: var(--scoreboard-font);
+  font-size: 1.6rem;
+  color: rgb(255, 227, 66);
+  font-family: var(--scoreboard-font);
 }
 
 .notification-board {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #f70000;
+  border-radius: 1rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .message-box {
-    font-size: 1.3rem;
-    font-family: var(--notification-font);
+  font-size: 1.6rem;
+  font-family: LedBoardR;
+
+  color: white;
 }
 
 .cricket-field {
-    background-color: rgb(87, 15, 87);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .back-field {
-    background-color: rgb(143, 206, 50);
-    width: 200px;
-    height: 94%;
-
-    border-radius: 2rem;
+  width: 200px;
+  height: 94%;
+  background-color: white;
+  opacity: 85%;
+  border-radius: 2rem;
 }
 
 .this-over-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: gainsboro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .balls-played {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    border: 1px solid;
-    border-radius: 50%;
+  border: 1px solid;
+  border-radius: 50%;
 
-    font-family: var(--this-over-font);
+  font-family: var(--this-over-font);
 }
 
 .hand-buttons-container {
-    margin: 0 auto;
-    width: 50%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    row-gap: 0.5rem;
-    column-gap: 0.5rem;
+  margin: 1rem auto;
+  row-gap: 1.5rem;
+  column-gap: 1.5rem;
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 .hand {
-    /* border: 1px solid; */
-    border-radius: 50%;
+  /* border: 1px solid; */
+  border-radius: 2rem;
+  width: 50px;
+  height: 50px;
+  padding: 0rem;
 
-    cursor: pointer;
+  cursor: pointer;
+  box-shadow: 2px 5px #000;
+
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hand:active {
+  box-shadow: 1px 2px #000;
+  transform: translateY(2px);
 }
 
 .one {
-    background-image: url(../assets/images/hands/one.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url(../assets/images/hands/one.png);
 }
 .two {
-    background-image: url(../assets/images/hands/two.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url(../assets/images/hands/two.png);
 }
 .three {
-    background-image: url(../assets/images/hands/three.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url(../assets/images/hands/three.png);
 }
 .four {
-    background-image: url(../assets/images/hands/four.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url(../assets/images/hands/four.png);
 }
 .five {
-    background-image: url(../assets/images/hands/five.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url(../assets/images/hands/five.png);
 }
 .six {
-    background-image: url(../assets/images/hands/six.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url(../assets/images/hands/six.png);
+}
+
+.bottom-container {
 }
