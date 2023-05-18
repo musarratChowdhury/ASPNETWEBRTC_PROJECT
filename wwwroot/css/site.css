@@ -43,7 +43,7 @@ video {
   align-items: center;
   height: 400px;
 }
-.create-meeting-btn {
+.create-meeting-btn, .create-match-btn {
   user-select: none;
   padding: 0.5rem 1rem;
   border: 1px solid black;

@@ -1,10 +1,11 @@
 {
   "name": "ASPNETWEBRTC_PROJECT",
   "version": "1.0.0",
-  "description": "PeerJs Library --> To create P2P data or media stream connection",
+  "description": "",
   "main": "index.js",
   "dependencies": {
-    "@types/jquery": "^3.5.16"
+    "@types/jquery": "^3.5.16",
+    "jquery": "^3.7.0"
   },
   "devDependencies": {},
   "scripts": {

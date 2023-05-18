@@ -1,3 +1,4 @@
+using ASPNETWEBRTC_PROJECT.Hubs;
 using AspNetWebRTC.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +26,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Game}/{action=Game}/{id?}");
+    pattern: "{controller=Game}/{action=Index}/{id?}");
 app.MapHub<DefaultHub>("/meeting");
+app.MapHub<GameHub>("/game");
 app.Run();

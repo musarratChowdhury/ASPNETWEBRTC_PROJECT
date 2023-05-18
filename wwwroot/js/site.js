@@ -6,3 +6,6 @@
 $(".create-meeting-btn").click(() => {
   location.href += "Home/JoinRoom";
 });
+$(".create-match-btn").click(() => {
+  location.href += "Game/JoinGameRoom";
+});

@@ -10,8 +10,15 @@ public class GameController : Controller
         return View();
     }
 
-    public IActionResult Game()
+    public IActionResult JoinGameRoom()
     {
+        return Redirect($"/match:{Guid.NewGuid()}");
+    }
+
+    [HttpGet("/match:{roomId}")]
+    public IActionResult Game (string roomId)
+    {
+        ViewBag.roomId = roomId;
         return View();
     }
 }
