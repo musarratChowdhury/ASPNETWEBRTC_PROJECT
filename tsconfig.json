@@ -1,0 +1,13 @@
+﻿{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es6",
+    "outDir": "./wwwroot/js"
+  },
+  "include": [
+    "./wwwroot/Scripts/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

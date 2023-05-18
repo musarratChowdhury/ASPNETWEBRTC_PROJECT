@@ -1,0 +1,152 @@
+﻿*,
+*::after,
+*::before {
+    /* border: 1px solid; */
+}
+/*css variables */
+:root {
+    --notification-font: monospace;
+    --scoreboard-font: monospace;
+    --this-over-font: monospace;
+}
+
+/* body */
+body {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* body */
+
+/* main game section */
+.main-game-section {
+    height: 700px;
+    width: 400px;
+    background-color: tomato;
+
+    display: grid;
+    grid-template-rows: 1.5fr 0.5fr 5fr 0.5fr 2fr;
+    border-radius: 1rem;
+}
+/* main game section */
+
+.score-board {
+    background-color: rgb(107, 107, 192);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    border-radius: 1rem 0rem;
+}
+.score-board div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.3rem;
+    font-family: var(--scoreboard-font);
+}
+
+.notification-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-box {
+    font-size: 1.3rem;
+    font-family: var(--notification-font);
+}
+
+.cricket-field {
+    background-color: rgb(87, 15, 87);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-field {
+    background-color: rgb(143, 206, 50);
+    width: 200px;
+    height: 94%;
+
+    border-radius: 2rem;
+}
+
+.this-over-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.balls-played {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid;
+    border-radius: 50%;
+
+    font-family: var(--this-over-font);
+}
+
+.hand-buttons-container {
+    margin: 0 auto;
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 0.5rem;
+    column-gap: 0.5rem;
+}
+
+.hand {
+    /* border: 1px solid; */
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+.one {
+    background-image: url(../assets/images/hands/one.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.two {
+    background-image: url(../assets/images/hands/two.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.three {
+    background-image: url(../assets/images/hands/three.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.four {
+    background-image: url(../assets/images/hands/four.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.five {
+    background-image: url(../assets/images/hands/five.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.six {
+    background-image: url(../assets/images/hands/six.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
