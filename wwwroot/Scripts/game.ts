@@ -1,4 +1,8 @@
-﻿import $ from "jquery";
+﻿
+// @ts-ignore
+const connection = new signalR.HubConnectionBuilder()
+    .withUrl("/game")
+    .build();
 
 var One = $('[data-number="1"]');
 var Two = $('[data-number="2"]');
@@ -9,8 +13,10 @@ var Six = $('[data-number="6"]');
 
 $(() => {
   console.log("JS INITIATED");
+  const ROOM_ID =document.querySelector("#roomidtext").textContent;
+  console.log(ROOM_ID)
   One.on("click", () => {
-    console.log("one clicked");
+    connection.invoke(ROOM_ID, )
   });
   Two.on("click", () => {
     console.log("Two clicked");

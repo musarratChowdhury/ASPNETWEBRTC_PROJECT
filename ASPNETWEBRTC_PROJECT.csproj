@@ -11,7 +11,24 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="wwwroot\Scripts\game.ts" />
+    <Compile Remove="wwwroot\Scripts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="wwwroot\Scripts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Scripts\**" />
+    <Content Remove="tsconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="wwwroot\Scripts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\Scripts\game.ts" />
   </ItemGroup>
 
 </Project>

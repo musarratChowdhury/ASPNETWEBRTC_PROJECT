@@ -16,6 +16,11 @@ public class GameHub : Hub
     {
         await Clients.Group(roomId).SendAsync("ReceiveMessage", user, message);
     }
+
+    public async Task NUMBER_PRESSED(string ROOM_ID, string peerId, int value)
+    {
+        Console.WriteLine(ROOM_ID, peerId, value);
+    }
     
     public override Task OnDisconnectedAsync(Exception? exception)
     {
