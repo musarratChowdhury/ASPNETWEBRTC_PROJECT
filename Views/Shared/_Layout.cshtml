@@ -4,16 +4,35 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ASPNETWEBRTC_PROJECT</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/room.css">
-    <link rel="stylesheet" href="~/ASPNETWEBRTC_PROJECT.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true">
 </head>
 <body>
-
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <div class="navbar bg-base-100">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-xl">MusarratMeet</a>
+        </div>
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1">
+                <li><a>Link</a></li>
+                <li>
+                    <details>
+                        <summary>
+                            Parent
+                        </summary>
+                        <ul class="p-2 bg-base-100 rounded-t-none">
+                            <li><a>Link 1</a></li>
+                            <li><a>Link 2</a></li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 </body>
 </html>

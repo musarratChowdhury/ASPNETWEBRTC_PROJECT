@@ -11,7 +11,7 @@ const connection = new signalR.HubConnectionBuilder()
 let chatMsg = document.getElementById('messageInput');
 let sendBtn = document.getElementById('sendButton');
 
-let user = document.getElementById("userInput");
+let userNameInput = document.getElementById("userInput");
 
 
 const videoGrid = document.querySelector("#video-grid");
@@ -38,16 +38,40 @@ myPeer.on("open", (id) => {
 //#region PEER EVENT CALL
 
 sendBtn.addEventListener("click", () => {
-    console.log(chatMsg.value, user.value);
-     connection.invoke("SendMessage", ROOM_ID, user.value, chatMsg.value);
+    console.log(chatMsg.value, userNameInput.value);
+    connection.invoke("SendMessage", ROOM_ID, userNameInput.value, chatMsg.value);
 })
 
 //for showing others msg
 
 connection.on("ReceiveMessage", function (user, message) {
-    var li = document.createElement("li");
-    document.getElementById("messagesList").appendChild(li);
+    console.log(user)
+    const messagesList = document.querySelector("#messagesList")
+    var li = document.createElement("div");
+    li.classList.add("chat-bubble")
+    if (user == userNameInput.value) {
+        let newChatStart = document.createElement("div")
+        newChatStart.classList.add("chat");
+        newChatStart.classList.add("chat-start");
+        let newChatBubble = document.createElement("div")
+        newChatBubble.classList.add("chat-bubble")
+        newChatBubble.textContent = message;
+        newChatStart.appendChild(newChatBubble)
+        messagesList.appendChild(newChatStart);
+    }
+    else {
+        let newChatEnd = document.createElement("div")
+        newChatEnd.classList.add("chat");
+        newChatEnd.classList.add("chat-end");
+        let newChatBubble = document.createElement("div")
+        newChatBubble.classList.add("chat-bubble")
+        newChatBubble.textContent = message;
+        newChatEnd.appendChild(newChatBubble);
+        messagesList.appendChild(newChatEnd);
+    }
+
     li.textContent = `${user} says ${message}`;
+    messagesList.scrollTo(0, 99999)
 });
 
 myPeer.on("call", (call) => {
